@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div>
+        <iframe width='100%' height='800px' id="myIframe" src="http://localhost:3000/"></iframe>
+    </div>
+
+    <script>
+        const iframe = document.getElementById('myIframe')
+        iframe.onload = function () {
+            iframe.contentWindow.postMessage({
+                inquiryId: '%inquiry_id_from_API_request%',
+                inquirySessionToken: '%inquiry_session_token_from_API_request%'
+            }, '*') // TODO: put your embed domain here
+        }
+        window.addEventListener('message', (event) => {
+            if (event.origin === 'http://localhost:3000') {
+                // Here you can listen to outcome events from the embedded iframe
+                console.log('>>> parent page received event from embed', event.data)
+            }
+        }, false)
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+# curl -X POST 'https://trusthub.stage.twilio.com/v1/ComplianceInquiries/Registration/RegulatoryCompliance/GB/Initialize'
+#--header 'Content-Type: application/x-www-form-urlencoded'
+#--data-urlencode 'PhoneNumberType=national'
+#--data-urlencode 'EndUserType=Business'
+#--data-urlencode 'IsIsvEmbed=true'
+#--data-urlencode 'NotificationEmail=test@twilio.com'
+#--data-urlencode 'StatusCallbackUrl=https://your.backend.com/webhook
+#--data-urlencode 'BusinessIdentityType=isv_reseller_or_partner'
+#--data-urlencode 'FriendlyName=My Friendly Name'
+#--user MY_ACCOUNT_SID:MY_AUTH_TOKEN
+
+POST https://trusthub.twilio.com/v1/ComplianceInquiries/Registration/RegulatoryCompliance/GB/Initialize
+Authorization: Basic {{account_sid}} {{auth_token}}
+Content-Type: application/x-www-form-urlencoded
+
+PhoneNumberType = national &
+IsIsvEmbed = true &
+FriendlyName = kyc_embed_test_{{$timestamp}} &
+BusinessIdentityType = isv_reseller_or_partner &
+IsvRegisteringForSelfOrTenant = my_customer &
+#EndUserType = Business &
+EndUserType = Individual &
+NotificationEmail = test%40twilio.com &
+StatusCallbackUrl = https%3A%2F%2Fyour.backend.com%2Fwebhook
+# BusinessLegalName = ""
+# BusinessLegalName = ""
+# BusinessRegistrationAuthority = ""
+# BusinessWebsiteUrl = ""
+# AddressStreet = ""
+# AddressStreetSecondary = ""
+# AddressCity = ""
+# AddressSubdivision = ""
+# AddressPostalCode = ""
+# AddressCountryCode = ""
+# EmergencyAddressStreet = ""
+# EmergencyAddressStreetSecondary = ""
+# EmergencyAddressCity = ""
+# EmergencyAddressSubdivision = ""
+# EmergencyAddressPostalCode = ""
+# EmergencyAddressCountryCode = ""
+# AuthorizedRepresentative1FirstName = ""
+# AuthorizedRepresentative1LastName = ""
+# AuthorizedRepresentative1Email = ""
+# AuthorizedRepresentative1Phone = ""
+
+###
+
+
+
+
+
