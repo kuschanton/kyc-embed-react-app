@@ -6,7 +6,7 @@
 </head>
 <body>
     <div>
-        <iframe width='100%' height='800px' id="myIframe" src="http://localhost:3000/"></iframe>
+        <iframe width='100%' height='800px' id="myIframe" src="https://kyc-embed-react-app-XXXX-dev.twil.io/index.html"></iframe>
     </div>
 
     <script>
@@ -18,7 +18,7 @@
             }, '*') // TODO: put your embed domain here
         }
         window.addEventListener('message', (event) => {
-            if (event.origin === 'http://localhost:3000') {
+            if (event.origin === 'https://kyc-embed-react-app-XXXX-dev.twil.io/index.html') {
                 // Here you can listen to outcome events from the embedded iframe
                 console.log('>>> parent page received event from embed', event.data)
             }
